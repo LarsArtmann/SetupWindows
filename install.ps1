@@ -28,7 +28,7 @@ function Install()
 	choco install chrome-remote-desktop-chrome -y
 	choco install keepass -y
 	choco install google-drive-file-stream -y
-	choco install gcloudsdk -y
+	##choco install gcloudsdk -y
 	choco install gradle -y
 	choco install signal -y
 	choco install signalbackup-tools -y
@@ -39,6 +39,10 @@ function Install()
 	choco install obs-virtualcam -y
 	choco install tor-browser -y
 	##clickup
+
+	#Google Cloud SDK
+	(New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")
+	& $env:Temp\GoogleCloudSDKInstaller.exe
 
 	npm install -g firebase-tools -y
 }
