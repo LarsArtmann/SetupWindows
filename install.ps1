@@ -38,6 +38,9 @@ function Install()
 	choco install obs-studio -y
 	choco install obs-virtualcam -y
 	choco install tor-browser -y
+	choco install multimc -y
+	choco install adoptopenjdkjre -y
+	choco install liberica17jre -y 
 	##clickup
 
 	#Google Cloud SDK
@@ -45,6 +48,9 @@ function Install()
 	& $env:Temp\GoogleCloudSDKInstaller.exe
 
 	npm install -g firebase-tools -y
+	npm install -g node-gyp -y
+	npm install -g gulp-cli -y
+
 }
 
 function Git()
