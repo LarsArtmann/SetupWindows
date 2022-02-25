@@ -42,6 +42,9 @@ function Install()
 	choco install adoptopenjdkjre -y
 	choco install liberica17jre -y 
 	choco install dotnet -y
+	choco install dotnet-sdk -y
+	choco install dotnetcore-sdk -y
+	choco install azure-cli -y
 	##clickup
 
 	#Google Cloud SDK

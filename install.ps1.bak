@@ -41,6 +41,9 @@ function Install()
 	choco install multimc -y
 	choco install adoptopenjdkjre -y
 	choco install liberica17jre -y 
+	choco install dotnet -y
+	choco install dotnet-sdk -y
+	choco install dotnetcore-sdk -y
 	##clickup
 
 	#Google Cloud SDK
