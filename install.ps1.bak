@@ -49,6 +49,8 @@ function Install()
 
 	npm install -g firebase-tools -y
 	npm install -g node-gyp -y
+	npm install -g gulp-cli -y
+
 }
 
 function Git()
