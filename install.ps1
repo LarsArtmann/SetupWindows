@@ -45,6 +45,7 @@ function Install()
 	choco install dotnet-sdk -y
 	choco install dotnetcore-sdk -y
 	choco install azure-cli -y
+	choco install dotnetcore-aspnetruntime -y
 	##clickup
 
 	#Google Cloud SDK
