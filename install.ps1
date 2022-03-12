@@ -46,7 +46,9 @@ function Install()
 	choco install dotnetcore-sdk -y
 	choco install azure-cli -y
 	choco install dotnetcore-aspnetruntime -y
+	choco install duplicati -y
 	##clickup
+	##notion
 
 	#Google Cloud SDK
 	(New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")
