@@ -47,7 +47,6 @@ function Install()
 	choco install azure-cli -y
 	choco install dotnetcore-aspnetruntime -y
 	choco install duplicati -y
-	choco install postman -y
 	##clickup
 	##notion
 
