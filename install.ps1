@@ -58,6 +58,7 @@ function Install()
 	choco install postman -y
 	choco install razer-synapse-3 -y
 	choco install notion -y
+	choco install android-sdk -y
 	##choco install clickup -y
 
 	#Google Cloud SDK
