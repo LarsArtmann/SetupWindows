@@ -59,6 +59,7 @@ function Install()
 	choco install razer-synapse-3 -y
 	choco install notion -y
 	choco install android-sdk -y
+	choco install openjdk11 -y
 	##choco install clickup -y
 
 	#Google Cloud SDK
