@@ -60,6 +60,7 @@ function Install()
 	choco install notion -y
 	choco install android-sdk -y
 	choco install openjdk11 -y
+	choco install microsoft-teams -y
 	##choco install clickup -y
 
 	#Google Cloud SDK
