@@ -1,3 +1,5 @@
+##Run "Set-ExecutionPolicy RemoteSigned"
+
 function ShowFileExtensions()
 {
     ##http://superuser.com/questions/666891/script-to-set-hide-file-extensions
@@ -6,17 +8,23 @@ function ShowFileExtensions()
     Set-ItemProperty . HideFileExt "0"
     Pop-Location
     Stop-Process -processName: Explorer -force # This will restart the Explorer service to make this work.
+    Echo "Made File Extensions visible"
 }
 
 function crypto()
 {
 	##WARNING: Your Bitlocker PIN needs to be a 6-20 chars long string only containing numbers
-	$SecureString = ConvertTo-SecureString "YOUR_BITLOCKER_PASSWORD" -AsPlainText -Force
-	Enable-BitLocker -MountPoint "C:" -EncryptionMethod XtsAes256 -UsedSpaceOnly -Pin $SecureString -TPMandPinProtector
+	$SecureString = ConvertTo-SecureString "YOUR_PASSWORD_HERE_PLEASE" -AsPlainText -Force
+	Enable-BitLocker -MountPoint "C:" -EncryptionMethod XtsAes256 -Pin $SecureString -TPMandPinProtector -UsedSpaceOnly
+    ##If no TPM available:
+    ##Do https://www.easyuefi.com/bitlocker-anywhere/resource/enable-bitlocker-without-tpm.html then run:
+    ##Enable-BitLocker -MountPoint "C:" -PasswordProtector -EncryptionMethod XtsAes256 -Password $SecureString -UsedSpaceOnly
 }
 
 function Install()
 {
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
 	choco install spotify -y
 	choco install anydesk.install -y
 	choco install jetbrainstoolbox -y
@@ -47,17 +55,25 @@ function Install()
 	choco install azure-cli -y
 	choco install dotnetcore-aspnetruntime -y
 	choco install duplicati -y
-	##clickup
-	##notion
+	choco install postman -y
+	choco install razer-synapse-3 -y
+	choco install notion -y
+	choco install android-sdk -y
+	choco install openjdk11 -y
+	choco install microsoft-teams -y
+	##choco install clickup -y
 
 	#Google Cloud SDK
 	(New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")
 	& $env:Temp\GoogleCloudSDKInstaller.exe
 
+}
+
+function InstallNPMModules()
+{
 	npm install -g firebase-tools -y
 	npm install -g node-gyp -y
 	npm install -g gulp-cli -y
-
 }
 
 function Git()
@@ -71,6 +87,7 @@ function Init()
 {
 	gcloud init
 	firebase login
+    az login
 }
 
 Install

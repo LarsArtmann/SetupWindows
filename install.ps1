@@ -54,7 +54,6 @@ function Install()
 	choco install dotnetcore-sdk -y
 	choco install azure-cli -y
 	choco install dotnetcore-aspnetruntime -y
-	choco install duplicati -y
 	choco install postman -y
 	choco install razer-synapse-3 -y
 	choco install notion -y
