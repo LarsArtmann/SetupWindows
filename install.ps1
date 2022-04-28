@@ -61,6 +61,8 @@ function Install()
 	choco install openjdk11 -y
 	choco install microsoft-teams -y
 	choco install terraform -y
+	choco install terraformer -y
+	choco install maven -y
 	##choco install clickup -y
 
 	#Google Cloud SDK
