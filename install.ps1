@@ -63,6 +63,7 @@ function Install()
 	choco install terraform -y
 	choco install terraformer -y
 	choco install maven -y
+	choco install ruby -y
 	##choco install clickup -y
 
 	#Google Cloud SDK
