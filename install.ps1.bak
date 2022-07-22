@@ -81,7 +81,7 @@ function InstallNPMModules()
 
 function Git()
 {
-	git config --global user.name "Lars Artman"
+	git config --global user.name "Lars Artmann"
 	git config --global user.email "git@lars.software"
 }
 

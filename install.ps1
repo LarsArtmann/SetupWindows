@@ -65,6 +65,7 @@ function Install()
 	choco install maven -y
 	choco install ruby -y
 	##choco install clickup -y
+	choco install go -y
 
 	#Google Cloud SDK
 	(New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")
